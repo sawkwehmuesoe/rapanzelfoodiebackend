@@ -13,11 +13,20 @@ class Recipe extends Model
         'title',
         'description',
         'image',
-        'cookingtime',
-        'amount',
-        'type',
-        'user_id',
-        'category_id'
+        // 'cookingtime',
+        // 'amount',
+        // 'type',
+        // 'user_id',
+        // 'category_id'
     ];
+
+    public function categories()
+    {
+        return $this->belongsTo(Category::class);
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
 }
